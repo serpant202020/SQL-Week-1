@@ -29,7 +29,7 @@ SELECT DISTINCT(engines) FROM planes ORDER BY engines;
 SELECT MAX(seats) FROM planes WHERE engines = 1;
 --The max is 16 for engine 1
 
-SELECT * FROM planes WHERE engines = 1 AND seats = 16;
+SELECT * FROM planes WHERE engines = 1 AND seats = 16 ORDER BY model;
 --The Dehavilland Otter DHC-3
 
 
@@ -51,3 +51,9 @@ SELECT MAX(seats) FROM planes WHERE engines = 4;
 
 SELECT * FROM planes WHERE engines = 4 AND seats = 450 ORDER BY model;
 --The Boeing 747-451
+
+
+--3
+SELECT COUNT(flight) FROM flights;
+--The total number of flights based upon the flight number is 336776
+
