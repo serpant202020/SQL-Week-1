@@ -80,3 +80,62 @@ SELECT carrier, COUNT(*) FROM flights GROUP BY carrier;
 | WN      |    12275 |
 | YV      |      601 |
 */
+
+--5. Show all of the airlines, ordered by number of flights in descending order.
+SELECT airlines.name, COUNT(flights.flight)
+FROM flights 
+INNER JOIN airlines ON flights.carrier = airlines.carrier 
+GROUP BY airlines.carrier 
+ORDER BY COUNT(flights.flight) DESC;
+
+/*
+*************************** 1. row ***************************
+                 name: United Air Lines Inc.
+count(flights.flight): 58665
+*************************** 2. row ***************************
+                 name: JetBlue Airways
+count(flights.flight): 54635
+*************************** 3. row ***************************
+                 name: ExpressJet Airlines Inc.
+count(flights.flight): 54173
+*************************** 4. row ***************************
+                 name: Delta Air Lines Inc.
+count(flights.flight): 48110
+*************************** 5. row ***************************
+                 name: American Airlines Inc.
+count(flights.flight): 32729
+*************************** 6. row ***************************
+                 name: Envoy Air
+count(flights.flight): 26397
+*************************** 7. row ***************************
+                 name: US Airways Inc.
+count(flights.flight): 20536
+*************************** 8. row ***************************
+                 name: Endeavor Air Inc.
+count(flights.flight): 18460
+*************************** 9. row ***************************
+                 name: Southwest Airlines Co.
+count(flights.flight): 12275
+*************************** 10. row ***************************
+                 name: Virgin America
+count(flights.flight): 5162
+*************************** 11. row ***************************
+                 name: AirTran Airways Corporation
+count(flights.flight): 3260
+*************************** 12. row ***************************
+                 name: Alaska Airlines Inc.
+count(flights.flight): 714
+*************************** 13. row ***************************
+                 name: Frontier Airlines Inc.
+count(flights.flight): 685
+*************************** 14. row ***************************
+                 name: Mesa Airlines Inc.
+count(flights.flight): 601
+*************************** 15. row ***************************
+                 name: Hawaiian Airlines Inc.
+count(flights.flight): 342
+*************************** 16. row ***************************
+                 name: SkyWest Airlines Inc.
+count(flights.flight): 32
+
+*/
