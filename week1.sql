@@ -57,3 +57,26 @@ SELECT * FROM planes WHERE engines = 4 AND seats = 450 ORDER BY model;
 SELECT COUNT(flight) FROM flights;
 --The total number of flights based upon the flight number is 336776
 
+
+--4: The total number of flights by carrier
+SELECT carrier, COUNT(*) FROM flights GROUP BY carrier;
+/*
+| carrier | count(*) |
++---------+----------+
+| 9E      |    18460 |
+| AA      |    32729 |
+| AS      |      714 |
+| B6      |    54635 |
+| DL      |    48110 |
+| EV      |    54173 |
+| F9      |      685 |
+| FL      |     3260 |
+| HA      |      342 |
+| MQ      |    26397 |
+| OO      |       32 |
+| UA      |    58665 |
+| US      |    20536 |
+| VX      |     5162 |
+| WN      |    12275 |
+| YV      |      601 |
+*/
