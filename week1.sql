@@ -166,3 +166,30 @@ COUNT(flights.flight): 48110
 COUNT(flights.flight): 32729
 
 */
+
+--7. Show only the top 5 airlines, by number of flights of distance 1,000 miles or greater, ordered by number of flights in descending order.
+
+SELECT airlines.name, COUNT(flights.flight)
+FROM flights 
+INNER JOIN airlines ON flights.carrier = airlines.carrier AND flights.distance >= 1000
+GROUP BY airlines.carrier 
+ORDER BY COUNT(flights.flight) DESC
+LIMIT 5;
+
+/*
+*************************** 1. row ***************************
+                 name: United Air Lines Inc.
+COUNT(flights.flight): 41135
+*************************** 2. row ***************************
+                 name: JetBlue Airways
+COUNT(flights.flight): 30022
+*************************** 3. row ***************************
+                 name: Delta Air Lines Inc.
+COUNT(flights.flight): 28096
+*************************** 4. row ***************************
+                 name: American Airlines Inc.
+COUNT(flights.flight): 23583
+*************************** 5. row ***************************
+                 name: ExpressJet Airlines Inc.
+COUNT(flights.flight): 6248
+*/
