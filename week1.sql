@@ -139,3 +139,30 @@ count(flights.flight): 342
 count(flights.flight): 32
 
 */
+
+--6. Show only the top 5 airlines, by number of flights, ordered by number of flights in descending order.
+SELECT airlines.name, COUNT(flights.flight)
+FROM flights 
+INNER JOIN airlines ON flights.carrier = airlines.carrier 
+GROUP BY airlines.carrier 
+ORDER BY COUNT(flights.flight) DESC
+LIMIT 5;
+
+/*
+*************************** 1. row ***************************
+                 name: United Air Lines Inc.
+COUNT(flights.flight): 58665
+*************************** 2. row ***************************
+                 name: JetBlue Airways
+COUNT(flights.flight): 54635
+*************************** 3. row ***************************
+                 name: ExpressJet Airlines Inc.
+COUNT(flights.flight): 54173
+*************************** 4. row ***************************
+                 name: Delta Air Lines Inc.
+COUNT(flights.flight): 48110
+*************************** 5. row ***************************
+                 name: American Airlines Inc.
+COUNT(flights.flight): 32729
+
+*/
