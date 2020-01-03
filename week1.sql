@@ -193,3 +193,19 @@ COUNT(flights.flight): 23583
                  name: ExpressJet Airlines Inc.
 COUNT(flights.flight): 6248
 */
+
+--8. Create a question that (a) uses data from the flights database, and (b) requires aggregation to answer it, and write down both the question, and the query that answers the question.
+
+--Show the total number of flights leaving each airport. Order each airport in descending order.
+
+SELECT origin, COUNT(*) FROM flights GROUP BY origin;
+
+/*
++--------+----------+
+| origin | count(*) |
++--------+----------+
+| EWR    |   120835 |
+| JFK    |   111279 |
+| LGA    |   104662 |
++--------+----------+
+*/
